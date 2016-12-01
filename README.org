@@ -1,0 +1,20 @@
+
+* Algorithms Part 1 and 2 (Coursera, Princeton)
+  Topics:
+*** Part 1
+| data types | stakcs, queue, bag, union-find, priority queue] |
+| sorting    | quicksort, mergesort, heapsort, radix sorts     |
+| searching  | BST, red-black BST, hash table                  |
+*** Part 2
+| graphs     | BFS, DFS, Pring, Kruskai, Dijkstra              |
+| strings    | KMP, regex, TST, Huffman, LZW                   |
+| advanced   | B-tree, suffex array, maxflow                   |
+
+
+
+
+
+
+
+** Union Find
+Illustrating basic approach to developing and analyzing algorithms using the dynamic connectivity problem.
