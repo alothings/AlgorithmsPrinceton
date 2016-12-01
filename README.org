@@ -11,10 +11,10 @@
 | advanced   | B-tree, suffex array, maxflow                   |
 
 
-
-
-
-
-
 ** Union Find
 Illustrating basic approach to developing and analyzing algorithms using the dynamic connectivity problem.
+- Apply union-find data type to solve problems
+- Define union-find (or disjoint sets) data type
+- Compare the performance of different algorithms for the union-find data type
+- Develop Java implementations of different algorithms for union-find
+- Use parent-link representation
