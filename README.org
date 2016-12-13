@@ -1,4 +1,5 @@
-
+#+STARTUP: hidestars
+#+STARTUP: indent
 * Algorithms Part 1 and 2 (Coursera, Princeton)
   Topics:
 *** Part 1
@@ -18,3 +19,76 @@ Illustrating basic approach to developing and analyzing algorithms using the dyn
 - Compare the performance of different algorithms for the union-find data type
 - Develop Java implementations of different algorithms for union-find
 - Use parent-link representation
+
+** Analysis of Algorithms
+Follow Scientific Method:
+- Observation
+- Hypothesis
+- Predict
+- Verify
+- Validate
+
+Approaches:
+- Empirical Analysis : Using montecarlo simulations to make predictions.
+- Mathematical analysis : Counting frequency of operations and simplifying when necesary.
+- Scientific method
+
+| Memory Ussage |       |
+|---------------+-------|
+| type          | bytes |
+| boolean       |     1 |
+| char          |     2 |
+| int           |     4 |
+| float         |     4 |
+| long          |     8 |
+| double        |     8 |
+
+In Java:
+Object overhead : 16 bytes
+Reference : 8 bytes
+Padding : A multiple of 8 bytes
+
+** Bags, Queues, and Stacks
+*** Stacks
+Implementation using Linked Lists or Arrays.
+Stacks considerations:
+
+**** Linked Lists:
+- Provide Constant time for all operations (pop, push, isEmpty, etc)
+- About 40 Bytes of memory, since there is an inner class which requires 16 bytes of overhead.
+**** Arrays:
+- Push adds new item to s[N], pop removes item from s[N-1]
+Defects:
+- Stack overflows when N exceeds array's capacity.
+- Loitering: Holding reference to an object when it is no longer needed.
+  To avoid this, set item to null!!!!
+
+*** Queues:
+Also Implementing with Linked Lists and Arrays.
+
+*** Generics:
+Creating Implementations of such data structures for different data types is not desirable.
+A solution for this is using <Generics>. See GenericsStacks.java for an example.
+
+*** Iterators:
+Design challenge: Support iteration over stack items by client, without revealing the internal representation of the stack.
+- In Java:
+  Make Stack the *Iterable* interface. 
+
+Interview Questions:
+1. Queue with two stacks. Implement a queue with two stacks so that each queue operations takes a constant amortized number of stack operations.
+2. 
+3. 
+
+** Sorting:
+*** Sorting Introduction
+- Goal: Sort *any* type of data.
+- How can sort() know how to compary data of type double, string, etc?
+  CallBack = reference to executable code
+  - Client passes array of objects to sort() function
+  - sort() calls back the object's *compareTo()* method as needed.
+- Callbacks are implemented differently by language:
+  - Java: interfaces
+  - C++ : class-type functors
+  - Python, Perl, Javascript: first-class functions.
+
