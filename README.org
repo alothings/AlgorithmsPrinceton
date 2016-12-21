@@ -92,3 +92,6 @@ Interview Questions:
   - C++ : class-type functors
   - Python, Perl, Javascript: first-class functions.
 
+
+* Week 4
+** Priority Queues
