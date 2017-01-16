@@ -1,3 +1,4 @@
+import java.io.FileInputStream;
 
 /**
  * Created by alonso on 12/10/16.
@@ -34,13 +35,15 @@ public class QuickFindUF {
 
     public static void main(String[] args){
 
+//        System.setIn(new FileInputStream(args[0]));
         int N = StdIn.readInt();
         QuickFindUF uf = new QuickFindUF(N);
-
-        while (!StdIn.isEmpty()){
+        while (!StdIn.isEmpty())
+        {
             int p = StdIn.readInt();
             int q = StdIn.readInt();
-            if (!uf.connected(p, q)){
+            if (!uf.connected(p, q))
+            {
                 uf.union(p, q);
                 StdOut.println(p + " " + q);
             }
