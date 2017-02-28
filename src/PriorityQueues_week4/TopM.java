@@ -7,9 +7,9 @@
  */
 public class TopM {
 
-//    public static void main(String[] args)
-//    {
-//        // Print the top M lines in the input stream
+    public static void main(String[] args)
+    {
+        // Print the top M lines in the input stream
 //        int M = Integer.parseInt(args[0]);
 //        MinPQ<Transaction> pq = new MinPQ<Transaction>(M+1);
 //        while (StdIn.hasNextLine())
@@ -21,5 +21,5 @@ public class TopM {
 //        Stack<Transaction> stack = new Stack<Transaction>();
 //        while (!pq.isEmpty()) stack.push(pq.delMin());
 //        for (Transaction t : stack) StdOut.println(t);
-//    }
+    }
 }

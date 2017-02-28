@@ -1,3 +1,6 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 /**
  * Created by alonso on 12/11/16
  * Implementation of Stacks using Linked Lists

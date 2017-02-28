@@ -1,3 +1,7 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
+
 /**
  * Created by alonso on 12/13/16.
  * Implementation of Insertion Sort
@@ -48,6 +52,8 @@ public class Insertion {
         Insertion.sort(a);
         for (int i = 0; i < N; i++)
             StdOut.println(a[i]);
+
+        StdOut.println("Is Sorted? " + isSorted(a));
     }
 }
 

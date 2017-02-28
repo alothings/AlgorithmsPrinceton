@@ -1,3 +1,6 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 /**
  * Created by alonso on 12/10/16.
  * Lazy Approach to Union-Find problem (avoid doing work)

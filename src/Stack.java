@@ -66,6 +66,7 @@ public class Stack<Item> implements Iterable<Item>
     /**
      * Stack Test Client
      */
+
 //    public static void main(String[] args) {
 //        Stack stack = new Stack();
 //        while (!StdIn.isEmpty()) {
@@ -76,6 +77,8 @@ public class Stack<Item> implements Iterable<Item>
 //                stack.push(s);
 //        }
 //    }
+
+
 /**
  * Input: tobe.txt
  * to be or not to - be - - that - - - is

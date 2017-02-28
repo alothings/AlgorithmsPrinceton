@@ -1,3 +1,7 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
+
 /**
  * Created by alonso on 12/13/16.
  * Implementation of Shell Sort
