@@ -5,7 +5,6 @@
 *.rar
 *.log
 
-.idea/workspace.xml
 ### Java template
 # Compiled class file
 
@@ -18,7 +17,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.ear
 *.tar.gz
