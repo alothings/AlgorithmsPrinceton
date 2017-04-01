@@ -1,5 +1,6 @@
 #+STARTUP: hidestars
 #+STARTUP: indent
+
 * Algorithms Part 1 and 2 (Coursera, Princeton)
   Topics:
 *** Part 1
@@ -73,12 +74,12 @@ A solution for this is using <Generics>. See GenericsStacks.java for an example.
 *** Iterators:
 Design challenge: Support iteration over stack items by client, without revealing the internal representation of the stack.
 - In Java:
-  Make Stack the *Iterable* interface. 
+  Make Stack the *Iterable* interface.
 
 Interview Questions:
 1. Queue with two stacks. Implement a queue with two stacks so that each queue operations takes a constant amortized number of stack operations.
-2. 
-3. 
+2.
+3.
 
 ** Sorting:
 *** Sorting Introduction
@@ -95,3 +96,146 @@ Interview Questions:
 
 * Week 4
 ** Priority Queues
+
+** Symbol Tables
+
+Key-value pair abstraction
+- Insert a calue with specified key
+- Given a key, search for the corresponding value
+
+| public class ST<Key, Value> |                         |                                   |
+|-----------------------------+-------------------------+-----------------------------------|
+| <                           |                         | >                                 |
+|     +----+                  | ST()                    | create symbol table               |
+| void|    |                  | put(Key key, Value val) | put key value pair into the table |
+| Valu|    |                  | get(Key key)            |                                   |
+| void+----+                  | delete(Key key)         |                                   |
+| boolean                     | contains(Key key)       |                                   |
+| boolean                     | isEmpty                 |                                   |
+| int                         | size()                  |                                   |
+| Iterable<Key>               | keys()                  | all the keys in the table         |
+|-----------------------------+-------------------------+-----------------------------------|
+
+
+Conventions:
+- Values are not null
+- get() returns null if key not present
+- put() overwrites old value with new value
+
+so.. Contains():
+public boolean contains(Key key)
+{ return get(key) != null; }
+
+Value type: Any generic type
+Key type: assumptions:
+- assume keys are Comparable, so.. use compareTo().  (specify Comparable in API)
+- Assume keys are any generic type, use equals() to test equality.
+- Assume keys are any generic type, use equals to test equality;use hashCode() to scramble key.
+
+Best Practices: Use immutable types for symbol table keys.
+Immutable: String, Integer, DOuble, File
+Mutable: Stringbuilder, arrays, URL
+
+Equality test:
+- All java classes inherit a method equals()
+- Java requirements for x, y, z: Reflexive (x.equals(x) is true), Symmetric, Transitive, Non-null.
+
+I fmplementing equals for user-defined data types:
+- Optimize for reference equality
+- check agains null
+- check that two objects are same type and cast
+- compare each significant field
+  - if field is primitive type, use ==
+  - if field is an object, use equals()  <-- apply recursive rule
+  - if field is an array, apply to each entry <-- use Arrays.equals(a,b) or Arrays.deepEquals(a,b), Not a.equals(b)
+
+Best practices,
+- Compare fields most likely to differ
+- Make compareTo() consistent with equals()
+
+Different when Key is Comparable
+| public class ST<Key extends Comparable<Key>, Value> |                         |                                   |
+|-----------------------------------------------------+-------------------------+-----------------------------------|
+| <                                                   |                         | >                                 |
+|                                                     | ST()                    | create symbol table               |
+| void                                                | put(Key key, Value val) | put key value pair into the table |
+| Value                                               | get(Key key)            |                                   |
+| void                                                | delete(Key key)         |                                   |
+| boolean                                             | contains(Key key)       |                                   |
+| boolean                                             | isEmpty                 |                                   |
+| int                                                 | size()                  |                                   |
+| Iterable<Key>                                       | keys(Key lo, Key hi)    | all the keys in the table         |
+| Iterable<Key>                                       | keys()                  |                                   |
+| Key                                                 | min()                   |                                   |
+| Key                                                 | max()                   |                                   |
+| Key                                                 | floor(Key key)          |                                   |
+| Key                                                 | ceiling(Key key)        |                                   |
+| void                                                | deleteMint()            |                                   |
+| void                                                | deleteMax()             |                                   |
+|                                                     |                         |                                   |
+|-----------------------------------------------------+-------------------------+-----------------------------------|
+
+*** Binary Search Trees
+A BST is a binary tree in symmetric order
+Symmetric: EAch node has a key that's: left.key < root.key < right.key
+- Larger than keys on left subtree
+- Smaller than keys on right subtree
+
+*** Ordered Operations in BSTs
+- Minimum
+- Maximum
+- floor:
+  - Case 1: k equals the key at the root
+    The floor of k is l
+  - Case 2: k is less than root -> The floor of k is in left subtree
+  - Case 3: k is greater than the key at the root -> The floor of k is in the right subtree if there is any key <= k;
+    otherwise it is the key in the root
+- ceiling
+
+* Week 5: Balanced Search Trees & Gemoetric Applications of BSTs
+** Balanced Search Trees
+The previous algorithms for search work well for a number of applications, but they have poor worst-case performance. Mainly because after a number of inserts and deletions the trees become unbalanced.
+Ideally: trees would be balanced as to have a height of lgN, but maintaining that is expensive. The following data tructures relaxes slightly the perfect balance requirement.
+
+*** 2-3 Search Trees
+It's a tree that is either empty or:
+- A 2-node, with one key and two links (left < key < right)
+- a 3-node, with two keys and three links (left < key1 < middle < key2 < right)
+- *Perfectly balanced* -> Every path from *root* to *null* nodes (ends) has same lenght
+- Symet ic order -> in order traversal yields keys in ascending order.
+                
+
+*** Red-Black BSTs
+
+
+            *****                                                     *****
+           **   **                                                   *     *
+          ******* **                                                 ************
+        **  *       **                                         ******            ************
+  ******    ******    ** *****                                *     *                  *     *
+ *     *    *     *     *     *                               ******                    *****
+  *****      *****       *****                              **     *
+                                                       *****        ******
+                                                      *     *       *     *
+                                                       *****         *****
+
+
+
+*
+*** B-Trees
+
+** Geometric Applications of BSTs
+*** 1d Range Search
+
+*** Line Segment Intersection
+
+*** Kd-Trees
+
+*** Interval Search Trees
+
+*** Rectangle Intersection
+
+*** Programming Assignment
+
+
+NOTE: *bold*, /italics/, _underline_, ~code~
